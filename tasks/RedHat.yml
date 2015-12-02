@@ -1,0 +1,22 @@
+---
+- name: add the mesosphere repo
+  yum: >
+    state=present
+    name='http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm'
+
+- name: mkdir /etc/mesos
+  file: >
+    owner="root"
+    group="root"
+    mode="go-w"
+    path=/etc/mesos
+    state=directory
+  
+- name: install /etc/mesos/zk
+  template: >
+    src=etc/mesos/zk.j2
+    dest=/etc/mesos/zk
+    owner=root
+    group=root
+    mode=0644
+

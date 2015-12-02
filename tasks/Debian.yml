@@ -1,0 +1,26 @@
+---
+- name: mkdir /etc/mesos
+  file: >
+    owner="root"
+    group="root"
+    mode="go-w"
+    path=/etc/mesos
+    state=directory
+  
+- name: install /etc/mesos/zk
+  template: >
+    src=etc/mesos/zk.j2
+    dest=/etc/mesos/zk
+    owner=root
+    group=root
+    mode=0644
+
+- name: add the mesosphere repo key
+  apt_key: keyserver=keyserver.ubuntu.com id=E56151BF
+
+- name: add the mesosphere repo
+  apt_repository: >
+    state=present
+    repo='deb http://repos.mesosphere.io/ubuntu trusty main'
+    update_cache=yes
+
