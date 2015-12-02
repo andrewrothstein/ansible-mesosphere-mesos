@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: julialang role
+  description: mesosphere-mesos role
   company: BlackRock
   license:
     - MIT
