@@ -1,14 +1,22 @@
 ---
+- name: get mesosphere rpm
+  get_url: >-
+    url={{mesosphere_rpm_url}}
+    dest=/tmp/{{mesosphere_rpm}}
+    owner=root
+    group=root
+    mode=0644
+    
 - name: add the mesosphere repo
-  yum: >
+  package: >
+    name=/tmp/{{mesosphere_rpm}}
     state=present
-    name='http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm'
 
 - name: mkdir /etc/mesos
   file: >
-    owner="root"
-    group="root"
-    mode="go-w"
+    owner=root
+    group=root
+    mode=0755
     path=/etc/mesos
     state=directory
   

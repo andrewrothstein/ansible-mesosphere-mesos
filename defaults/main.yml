@@ -1,0 +1,5 @@
+---
+mesosphere_rpm : 'mesosphere-el-repo-7-1.noarch.rpm'
+mesosphere_rpm_url : 'http://repos.mesosphere.io/el/7/noarch/RPMS/{{mesosphere_rpm}}'
+mesosphere_zk_iface : 'eth0'
+mesosphere_zk_clientPort : 2181
