@@ -1,5 +1,8 @@
 ---
-mesosphere_rpm : 'mesosphere-el-repo-7-1.noarch.rpm'
+mesosphere_rpm : 'mesosphere-el-repo-7-3.noarch.rpm'
 mesosphere_rpm_url : 'http://repos.mesosphere.io/el/7/noarch/RPMS/{{mesosphere_rpm}}'
+
+mesosphere_deb_repo : 'deb http://repos.mesosphere.io/ubuntu {{ansible_lsb.codename}} main'
+
 mesosphere_zk_iface : 'eth0'
 mesosphere_zk_clientPort : 2181

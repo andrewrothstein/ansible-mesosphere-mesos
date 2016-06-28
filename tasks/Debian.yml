@@ -21,6 +21,6 @@
 - name: add the mesosphere repo
   apt_repository: >
     state=present
-    repo='deb http://repos.mesosphere.io/ubuntu trusty main'
+    repo={{mesosphere_deb_repo}}
     update_cache=yes
 
